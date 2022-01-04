@@ -1,0 +1,326 @@
+/* Global Variable */
+:root {
+    --primary-color: #1b1b1b;
+    --secondary-color: black;
+    --shadow-color: rgba(15, 15, 15, 0.603);
+    --mobile-break: 720px;
+    --text-color: cyan;
+  }
+  
+  /* Main Class Section */
+  .classSection {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+  }
+  
+  /* Class Section Heading */
+  .classSection .class-title {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    background: var(--primary-color);
+    padding: 30px;
+    font-weight: bold;
+    box-shadow: 0px 8px 16px 0px cyan;
+  }
+  
+  .classSection .class-title span {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+  
+  .classSection .class-title h1 {
+    font-size: 1.4rem;
+  }
+  
+  /* Class Section Class Table */
+  .classSection .class_table {
+    border: 2px solid var(--text-color);
+    width: 60%;
+  }
+  
+  .classSection .class_table .no_class_declaration {
+    color: var(--text-color);
+    padding: 1rem 0;
+  }
+  
+  /* Class Section Class Table Row */
+  .classSection .class_table tr {
+    background: rgba(129, 129, 129, 0.2);
+    /* background: linear-gradient(rgba(255, 255, 255, 0.7)); */
+    border-top: 2px solid var(--text-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 5%;
+    color: var(--text-color);
+  }
+  
+  .classSection .class_table tr:first-child{
+    border-top: none;
+  }
+  
+  /* Class Section Class Table Header */
+  .classSection .class_table thead tr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 5%;
+    font-weight: bold;
+  }
+  
+  /* Class Section Class Table Header */
+  .classSection .class_table thead tr th:first-child{
+    min-width: 90px;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  
+  /* Class Section Class Table Row Class Number Column */
+  .classSection .class_table tr .class-no {
+    text-decoration: none;
+    color: var(--secondary-color);
+    border-radius: 4%;
+    padding: 0.4rem 0.6rem;
+    background-color: var(--primary-color);
+    color: Var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 90px;
+  }
+  
+  /* Class Section Class Table Row Class Link */
+  .classSection .class_table tr td .class-link {
+    font-size: 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--text-color);
+  }
+  
+  
+  
+  /* Class Section Class Table Row Class Link Dropdown */
+  .classSection .class_table tr td .class-dropdown {
+    margin-left: 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Class Section Class Table Row Class Link Dropdown Button */
+  .classSection .class_table tr td .class-dropdown .class-dropbtn {
+    color: Var(--text-color);
+    padding: 0.4rem 0.6rem;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  /* Class Section Class Table Row Class Link Dropdown Button On Hover */
+  .classSection .class_table tr td .class-dropdown .class-dropbtn:hover {
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+  }
+  
+  /* Class Section Class Table Row Class Link Dropdown Content */
+  .classSection .class_table tr td .class-dropdown .class-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  /* Class Section Class Table Row Class Link Dropdown Content Button */
+  .classSection
+    .class_table
+    tr
+    td
+    .class-dropdown
+    .class-dropdown-content
+    .class-drop-con-btn {
+    border: none;
+    padding: 0.2rem 0;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Class Section Class Table Row Class Link Dropdown Content Button On Hover */
+  .classSection
+    .class_table
+    tr
+    td
+    .class-dropdown
+    .class-dropdown-content
+    .class-drop-con-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  
+  /* Class Section Class Table Row Class Link Dropdown Content On Dropdown Button Hover */
+  .classSection .class_table tr td .class-dropdown:hover .class-dropdown-content {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Mobie Screen media query for 720px */
+  @media screen and (max-width: 720px) {
+    .classSection .class-title {
+      font-size: 1.2rem;
+    }
+    .classSection .class_table {
+      width: 98%;
+    }
+  }
+  
+  /* ToolTip Style */
+  
+  /* Base styles for the element that has a tooltip */
+  [data-tooltip],
+  .tooltip {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  /* Base styles for the entire tooltip */
+  [data-tooltip]:before,
+  [data-tooltip]:after,
+  .tooltip:before,
+  .tooltip:after {
+    position: absolute;
+    visibility: hidden;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+      -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+      -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+      transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
+  }
+  
+  /* Show the entire tooltip on hover and focus */
+  [data-tooltip]:hover:before,
+  [data-tooltip]:hover:after,
+  [data-tooltip]:focus:before,
+  [data-tooltip]:focus:after,
+  .tooltip:hover:before,
+  .tooltip:hover:after,
+  .tooltip:focus:before,
+  .tooltip:focus:after {
+    visibility: visible;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+  }
+  
+  /* Base styles for the tooltip's directional arrow */
+  .tooltip:before,
+  [data-tooltip]:before {
+    z-index: 1001;
+    border: 6px solid transparent;
+    background: transparent;
+    content: "";
+  }
+  
+  /* Base styles for the tooltip's content area */
+  .tooltip:after,
+  [data-tooltip]:after {
+    z-index: 1000;
+    padding: 8px;
+    width: 200px;
+    border: 1px solid var(--text-color);
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: var(--text-color);
+    content: attr(data-tooltip);
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  
+  /* Directions */
+  
+  /* Left */
+  .tooltip-left:before,
+  .tooltip-left:after {
+    right: 100%;
+    bottom: 50%;
+    left: auto;
+  }
+  
+  .tooltip-left:before {
+    margin-left: 0;
+    margin-right: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-left-color: #000;
+    border-left-color: hsla(0, 0%, 20%, 0.9);
+  }
+  
+  .tooltip-left:hover:before,
+  .tooltip-left:hover:after,
+  .tooltip-left:focus:before,
+  .tooltip-left:focus:after {
+    -webkit-transform: translateX(-12px);
+    -moz-transform: translateX(-12px);
+    transform: translateX(-12px);
+  }
+  
+  /* Move directional arrows down a bit for left/right tooltips */
+  .tooltip-left:before,
+  .tooltip-right:before {
+    top: 3px;
+  }
+  
+  /* Vertically center tooltip content for left/right tooltips */
+  .tooltip-left:after,
+  .tooltip-right:after {
+    margin-left: 0;
+    margin-bottom: -16px;
+  }
+  
+  /* MODAL */
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    overflow-y: scroll;
+  }
+  
+  .modal .close_modal {
+    font-size: 2rem;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 110;
+    cursor: pointer;
+    color: white;
+  }
+  

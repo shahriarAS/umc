@@ -1,0 +1,113 @@
+/* dash stand for dashboard */
+
+/* Global Variable */
+:root {
+  --primary-color: #1b1b1b;
+  --secondary-color: black;
+  --shadow-color: rgba(62, 142, 65, 0.603);
+  --text-color: cyan;
+}
+
+/* Main Dashboard Div */
+.dash_div {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: url("../img/pc-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+/* Dashboard Section Container */
+.dash_div .dash_container {
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.dash_div section:last-child{
+  padding: 6rem 2rem;
+}
+
+/* Dashboard Section Heading */
+.dash_div .dash_container h2 {
+  font-weight: 2rem;
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--text-color);
+}
+
+.dash_div .dash_container .dash_form input[type="text"],
+input[type="number"],input[type="url"],input[type="date"],input[type="time"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.527);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.dash_div .dash_container label {
+  color: var(--text-color);
+}
+
+.dash_div .dash_container .dash_form input[type="submit"] {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 14px 20px;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid var(--text-color);
+}
+
+.submit-btn{
+  width: auto;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 14px 20px;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid var(--text-color);
+}
+
+.submit-btn:hover{
+  background-color: var(--primary-color);
+}
+
+.dash_div .dash_container .dash_form input[type="submit"]:hover {
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 720px) {
+  .dash_div {
+    flex-direction: column;
+    background: url("../img/mobile-bg.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .dash_div section:last-child{
+    padding: 6rem 2rem;
+    padding-top: 2rem;
+  }
+
+  .dash_div .dash_container .dash_form {
+    width: 100%;
+  }
+}

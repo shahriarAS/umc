@@ -1,0 +1,399 @@
+/* Global Variable */
+:root {
+  --primary-color: #1b1b1b;
+  --secondary-color: black;
+  --shadow-color: rgba(15, 15, 15, 0.603);
+  --mobile-break: 720px;
+  --text-color: cyan;
+}
+
+/* Main Class Section */
+.classSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  min-height: 100vh;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+/* Class Section Heading */
+.classSection .class-title {
+  color: var(--text-color);
+  margin-bottom: 3.5rem;
+  font-size: 2rem;
+  background: var(--primary-color);
+  padding: 30px;
+  font-weight: bold;
+  box-shadow: 0px 8px 16px 0px cyan;
+}
+
+.classSection .class-title p {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.classSection .class-title h1 {
+  font-size: 1.4rem;
+}
+
+.class_table {
+  border: 2px solid var(--text-color);
+  width: 60%;
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.class_table_schedule{
+  grid-template-columns: repeat(3, auto);
+}
+
+.class_table_pdfview{
+  grid-template-columns: repeat(2, auto);
+}
+
+.class_table_course_progress{
+  grid-template-columns: repeat(2, auto);
+}
+
+.no_class_declaration{
+  text-align: center;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  width: 60%;
+  padding: 1rem 0;
+}
+
+.class_table .class_table_item {
+  padding: 0.4rem 0;
+  padding-left: 0.4rem;
+  /* text-align: left; */
+  border-bottom: 2px solid var(--text-color);
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+.class_table .class_table_item a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.class_table .class_table_heading {
+  background-color: var(--primary-color);
+  padding: 0.6rem 0;
+}
+
+.class_table .class_item_classNo {
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class_table .class_item_classNo span {
+  display: inline-block;
+  background-color: var(--primary-color);
+  padding: 0.2rem 0.4rem;
+  min-width: 110px;
+}
+
+/* Class Section Class Table Row Class Link Dropdown */
+.class_table .class_table_item .class-dropdown {
+  margin-left: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Class Section Class Table Row Class Link Dropdown Button */
+.class_table .class_table_item .class-dropdown .class-dropbtn {
+  color: Var(--text-color);
+  padding: 0.4rem 0.6rem;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Class Section Class Table Row Class Link Dropdown Button On Hover */
+.class_table .class_table_item .class-dropdown .class-dropbtn:hover {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
+
+/* Class Section Class Table Row Class Link Dropdown Content */
+.class_table .class_table_item .class-dropdown .class-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Class Section Class Table Row Class Link Dropdown Content Button */
+.class_table
+  .class_table_item
+  .class-dropdown
+  .class-dropdown-content
+  .class-drop-con-btn {
+  border: none;
+  padding: 0.2rem 0;
+  font-size: 1rem;
+  text-align: center;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Class Section Class Table Row Class Link Dropdown Content Button On Hover */
+.class_table .class_table_item
+  .class-dropdown
+  .class-dropdown-content
+  .class-drop-con-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Class Section Class Table Row Class Link Dropdown Content On Dropdown Button Hover */
+.class_table .class_table_item .class-dropdown:hover .class-dropdown-content {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Mobie Screen media query for 720px */
+@media screen and (max-width: 720px) {
+  .no_class_declaration{
+    width: 90%;
+  }
+
+  .classSection{
+    padding: 0;
+  }
+
+  .classSection .class-title {
+    font-size: 1.2rem;
+  }
+
+  .classSection .class-title p{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .classSection .class_table{
+    width: 98%;
+  }
+
+}
+
+/* Mobie Screen media query for 620px */
+@media screen and (max-width: 620px) {
+
+  .classSection .class_table{
+    width: 100%;
+  }
+
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+
+.modal .close_modal {
+  font-size: 2rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 110;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* ToolTip Style */
+/* 
+  You want a simple and fancy tooltip?
+  Just copy all [data-tooltip] blocks:
+*/
+[data-tooltip] {
+  position: relative;
+  z-index: 10;
+}
+
+/* Positioning and visibility settings of the tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  bottom: calc(100% + 5px); /* 5px is the size of the arrow */
+  pointer-events: none;
+  transition: 0.2s;
+  will-change: transform;
+}
+
+/* The actual tooltip with a dynamic width */
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  padding: 10px 18px;
+  min-width: 50px;
+  max-width: 300px;
+  width: max-content;
+  width: -moz-max-content;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: rgba(59, 72, 80, 0.9);
+  background-image: linear-gradient(30deg,
+    rgba(59, 72, 80, 0.44),
+    rgba(59, 68, 75, 0.44),
+    rgba(60, 82, 88, 0.44));
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  white-space: pre-wrap;
+  transform: translate(-50%, -5px) scale(0.5);
+}
+
+/* Tooltip arrow */
+[data-tooltip]:after {
+  content: '';
+  border-style: solid;
+  border-width: 5px 5px 0px 5px; /* CSS triangle */
+  border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
+  transition-duration: 0s; /* If the mouse leaves the element, 
+                              the transition effects for the 
+                              tooltip arrow are "turned off" */
+  transform-origin: top;   /* Orientation setting for the
+                              slide-down effect */
+  transform: translateX(-50%) scaleY(0);
+}
+
+/* Tooltip becomes visible at hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+/* Scales from 0.5 to 1 -> grow effect */
+[data-tooltip]:hover:before {
+  transition-delay: 0.2s;
+  transform: translate(-50%, -5px) scale(1);
+}
+/* 
+  Arrow slide down effect only on mouseenter (NOT on mouseleave)
+*/
+[data-tooltip]:hover:after {
+  transition-delay: 0.5s; /* Starting after the grow effect */
+  transition-duration: 0.2s;
+  transform: translateX(-50%) scaleY(1);
+}
+/*
+  That's it.
+*/
+
+
+/*
+  If you want some adjustability
+  here are some orientation settings you can use:
+*/
+
+/* LEFT */
+/* Tooltip + arrow */
+[data-tooltip-location="left"]:before,
+[data-tooltip-location="left"]:after {
+  left: auto;
+  right: calc(100% + 5px);
+  bottom: 50%;
+}
+
+/* Tooltip */
+[data-tooltip-location="left"]:before {
+  transform: translate(-5px, 50%) scale(0.5);
+}
+[data-tooltip-location="left"]:hover:before {
+  transform: translate(-5px, 50%) scale(1);
+}
+
+/* Arrow */
+[data-tooltip-location="left"]:after {
+  border-width: 5px 0px 5px 5px;
+  border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+  transform-origin: left;
+  transform: translateY(50%) scaleX(0);
+}
+[data-tooltip-location="left"]:hover:after {
+  transform: translateY(50%) scaleX(1);
+}
+
+
+
+/* RIGHT */
+[data-tooltip-location="right"]:before,
+[data-tooltip-location="right"]:after {
+  left: calc(100% + 5px);
+  bottom: 50%;
+}
+
+[data-tooltip-location="right"]:before {
+  transform: translate(5px, 50%) scale(0.5);
+}
+[data-tooltip-location="right"]:hover:before {
+  transform: translate(5px, 50%) scale(1);
+}
+
+[data-tooltip-location="right"]:after {
+  border-width: 5px 5px 5px 0px;
+  border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
+  transform-origin: right;
+  transform: translateY(50%) scaleX(0);
+}
+[data-tooltip-location="right"]:hover:after {
+  transform: translateY(50%) scaleX(1);
+}
+
+
+
+/* BOTTOM */
+[data-tooltip-location="bottom"]:before,
+[data-tooltip-location="bottom"]:after {
+  top: calc(100% + 5px);
+  bottom: auto;
+}
+
+[data-tooltip-location="bottom"]:before {
+  transform: translate(-50%, 5px) scale(0.5);
+}
+[data-tooltip-location="bottom"]:hover:before {
+  transform: translate(-50%, 5px) scale(1);
+}
+
+[data-tooltip-location="bottom"]:after {
+  border-width: 0px 5px 5px 5px;
+  border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+  transform-origin: bottom;
+}
+

@@ -1,0 +1,24 @@
+/* Global Variable */
+:root {
+  --primary-color: #1b1b1b;
+  --secondary-color: black;
+  --shadow-color: rgba(8, 12, 8, 0.603);
+  --mobile-break: 720px;
+}
+
+.main_app {
+  background: url("../img/pc-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 720px) {
+  .main_app {
+    background: url("../img/mobile-bg.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

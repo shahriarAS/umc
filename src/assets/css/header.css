@@ -1,0 +1,189 @@
+/* Menu Close?Open Button  */
+.btn {
+  padding: 0.6rem;
+  text-align: center;
+  background: #1b1b1b;
+  color: Var(--text-color);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+  border: 1px solid cyan;
+}
+
+.btn-menu {
+  position: fixed;
+  top: 15px;
+  left: 45px;
+  z-index: 200;
+}
+
+/* Home Button */
+.btn-home {
+  position: fixed;
+  top: 15px;
+  right: 45px;
+  z-index: 100;
+}
+
+/* Move button right when click */
+.btn.click {
+  left: 260px;
+}
+
+/* Menu */
+.sidebar {
+  z-index: 100;
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  background: #1b1b1b;
+  transition: left 0.4s ease;
+  overflow-y: scroll;
+}
+
+/* Menu Sidebar On Open */
+.sidebar.show {
+  left: 0px;
+}
+
+/* Menu Sidebar heading */
+.sidebar .heading {
+  color: Var(--text-color);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.sidebar .heading a {
+  text-decoration: none;
+  color: Var(--text-color);
+}
+
+/* Menu Sidebar */
+nav ul {
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+
+/* Menu Sidebar Item */
+nav ul li {
+  line-height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul .group-btn {
+  line-height: 2;
+  display: flex;
+  padding-right: 0.4rem;
+}
+
+/* Menu Sidebar Last Item */
+nav ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Menu Sidebar Items Sub Items */
+nav ul li a {
+  position: relative;
+  color: Var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-left: 3px solid transparent;
+  line-height: 2.5;
+}
+
+/* Menu Sidebar Items Sub Items Carret Icon */
+nav ul li a i {
+  margin-right: 1rem;
+}
+
+nav ul li a span {
+  font-size: 10px;
+}
+
+/* Menu Sidebar Items Sub Items Carret Icon */
+nav ul li a span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+
+/* Menu Sidebar Items Sub Items Carret Icon Rotate */
+nav ul li a span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/* Menu Sidebar Items Sub Item on sidebar item activate */
+nav ul li.active a {
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+}
+
+/* Menu Sidebar Items Sub Item on hover */
+nav ul li a:hover {
+  background: #1e1e1e;
+}
+
+/* Menu Sidebar Items Sub Item Drop Content */
+nav ul ul {
+  position: static;
+  display: none;
+}
+
+/* Menu Sidebar Items Sub Item First Dropdown on Show status */
+nav ul .first-show.show {
+  display: block;
+}
+
+/* Menu Sidebar Items Sub Item Second Dropdown on Show status */
+nav ul .second-show.show1 {
+  display: block;
+}
+nav ul ul li {
+  line-height: 30px;
+  border-top: none;
+}
+nav ul ul li a {
+  font-size: 16px;
+  color: #e6e6e6;
+  padding-left: 40px;
+}
+
+nav ul ul li a span {
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.chap_status_completed {
+  color: greenyellow;
+}
+
+.chap_status_running {
+  color: white;
+}
+
+nav ul li.active ul li a {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+}
+nav ul ul li a:hover {
+  color: cyan !important;
+  background: #1e1e1e !important;
+}

@@ -1,0 +1,16 @@
+.manual{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 100px 6%;
+}
+
+.manual span{
+    color: cyan;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.manual .manual-question p{
+    font-size: 1.5rem;
+}

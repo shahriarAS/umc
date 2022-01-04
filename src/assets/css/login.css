@@ -1,0 +1,115 @@
+/* Global Variable */
+:root {
+  --primary-color: #1b1b1b;
+  --secondary-color: black;
+  --shadow-color: rgba(62, 142, 65, 0.603);
+  --mobile-break: 720px;
+  --text-color: cyan;
+}
+
+/* Main Login Section Container */
+.login_container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../img/pc-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+/* Login Section Div Only */
+.login_container .login_div {
+  padding-top: 2rem;
+  width: 40%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.dash_div section:last-child{
+  padding: 6rem 2rem;
+}
+
+/* Login Section Heading */
+.login_container .login_div h2 {
+  text-align: center;
+  color: var(--text-color);
+  margin: 1rem 0;
+}
+
+/* Login Section Form */
+.login_container .login_div form {
+  border: 3px solid var(--text-color);
+  width: 80%;
+  margin: auto;
+}
+
+/* Login Section Avatar Image Container */
+.login_container .login_div .img_container {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Login Section Avatar Image */
+.login_container .login_div img.avatar {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.login_container .login_div .form_container {
+  padding: 16px;
+}
+
+/* Login Section Form Field */
+.login_container .login_div input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--text-color);
+  box-sizing: border-box;
+}
+
+/* Login Section Label */
+.login_container .login_div label {
+  color: var(--text-color);
+}
+
+/* Login Section Form Button */
+.login_container .login_div button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border: 2px solid var(--text-color);
+}
+
+/* Login Section Form Button On Hover */
+.login_container .login_div button:hover {
+  opacity: 0.8;
+}
+
+/* Apply in less than 720px */
+@media screen and (max-width: 720px) {
+  .login_container {
+    flex-direction: column;
+    background: url("../img/mobile-bg.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .dash_div section:last-child{
+    padding: 6rem 2rem;
+    padding-top: 2rem;
+  }
+
+  .login_container .login_div {
+    width: 100%;
+  }
+}
