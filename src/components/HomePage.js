@@ -34,7 +34,7 @@ function HomePage(props) {
     GroupUpdateOnRefresh()
   }, [])
 
-  console.log(group)
+  // console.log(group)
 
   return (
     <>

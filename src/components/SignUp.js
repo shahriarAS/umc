@@ -46,11 +46,11 @@ function SignUp() {
         .catch((error) => {
           var errorCode = error.code;
           var errorMessage = error.message;
-          console.log(errorMessage);
+          // console.log(errorMessage);
           // ..
         });
 
-      console.log("SIGNED");
+      // console.log("SIGNED");
     },
   });
 

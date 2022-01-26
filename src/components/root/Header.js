@@ -89,7 +89,7 @@ function Header(props) {
         function () {
           alert("Logged OUT Successfully :)");
         },
-        function (error) { }
+        function (error) {}
       );
     dispatch({
       type: "logout",
@@ -113,8 +113,8 @@ function Header(props) {
         {menuStatus ? (
           <i className="fa fa-times"></i>
         ) : (
-            <i className="fa fa-bars"></i>
-          )}
+          <i className="fa fa-bars"></i>
+        )}
       </div>
       {/* Navbar Menu */}
       <nav className={menuStatus ? "sidebar show" : "sidebar"}>
@@ -141,13 +141,17 @@ function Header(props) {
               <li>
                 <Link className="nav-link" onClick={toggleMenu} to="/schedule">
                   <i className="fa fa-file-text-o" aria-hidden="true"></i>
-              Class & Exam Schedule
+                  Class & Exam Schedule
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" onClick={toggleMenu} to="/course_progress">
+                <Link
+                  className="nav-link"
+                  onClick={toggleMenu}
+                  to="/course_progress"
+                >
                   <i className="fa fa-file-text-o" aria-hidden="true"></i>
-              Course Progress
+                  Course Progress
                 </Link>
               </li>
             </>
@@ -261,113 +265,117 @@ function Header(props) {
               <li>
                 <Link className="nav-link" onClick={toggleMenu} to="/schedule">
                   <i className="fa fa-file-text-o" aria-hidden="true"></i>
-              Class & Exam Schedule
+                  Class & Exam Schedule
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" onClick={toggleMenu} to="/course_progress">
+                <Link
+                  className="nav-link"
+                  onClick={toggleMenu}
+                  to="/course_progress"
+                >
                   <i className="fa fa-file-text-o" aria-hidden="true"></i>
-              Course Progress
+                  Course Progress
                 </Link>
               </li>
             </>
           ) : (
-                <>
-                  <li>
-                    {/* Navbar Menu Dropdown Button */}
-                    <a
-                      href="#"
-                      className="first-btn paper-btn"
-                      onClick={() => toggleDrop("first")}
-                    >
-                      <i className="fa fa-book"></i>
+            <>
+              <li>
+                {/* Navbar Menu Dropdown Button */}
+                <a
+                  href="#"
+                  className="first-btn paper-btn"
+                  onClick={() => toggleDrop("first")}
+                >
+                  <i className="fa fa-book"></i>
                   1st Paper
                   <span
-                        className={
-                          dropStatus == "first"
-                            ? "fa fa-caret-down first rotate"
-                            : "fa fa-caret-down first"
-                        }
-                      ></span>
-                    </a>
-                    {/* Navbar Menu Dropdown Content */}
-                    <ul
-                      className={
-                        dropStatus == "first" ? "first-show show" : "first-show"
-                      }
-                    >
-                      {/* Navbar Menu Dropdown Content Item */}
-                      {classDB.g_p_c
-                        .filter(
-                          (x) =>
-                            x[1].group == classDB.SelectedChap.group &&
-                            x[1].part == 1
-                        )
-                        .map((x) => (
-                          <li
-                            className="li_chapter"
-                            onClick={() => sendData(1, x[1].chap)}
-                          >
-                            <HashLink smooth to="#class">
-                              Chapter {x[1].chap}{" "}
-                              <span className={`chap_status_${x[1].status}`}>
-                                ( {x[1].status} )
+                    className={
+                      dropStatus == "first"
+                        ? "fa fa-caret-down first rotate"
+                        : "fa fa-caret-down first"
+                    }
+                  ></span>
+                </a>
+                {/* Navbar Menu Dropdown Content */}
+                <ul
+                  className={
+                    dropStatus == "first" ? "first-show show" : "first-show"
+                  }
+                >
+                  {/* Navbar Menu Dropdown Content Item */}
+                  {classDB.g_p_c
+                    .filter(
+                      (x) =>
+                        x[1].group == classDB.SelectedChap.group &&
+                        x[1].part == 1
+                    )
+                    .map((x) => (
+                      <li
+                        className="li_chapter"
+                        onClick={() => sendData(1, x[1].chap)}
+                      >
+                        <HashLink smooth to="#class">
+                          Chapter {x[1].chap}{" "}
+                          <span className={`chap_status_${x[1].status}`}>
+                            ( {x[1].status} )
                           </span>
-                            </HashLink>
-                            {/* <a href="#">Chapter 1</a> */}
-                          </li>
-                        ))}
-                    </ul>
-                  </li>
-                  {/* Navbar Menu Item */}
-                  <li>
-                    {/* Navbar Menu Dropdown Button */}
-                    <a
-                      href="#"
-                      className="second-btn paper-btn"
-                      onClick={() => toggleDrop("second")}
-                    >
-                      <i className="fa fa-book"></i>
+                        </HashLink>
+                        {/* <a href="#">Chapter 1</a> */}
+                      </li>
+                    ))}
+                </ul>
+              </li>
+              {/* Navbar Menu Item */}
+              <li>
+                {/* Navbar Menu Dropdown Button */}
+                <a
+                  href="#"
+                  className="second-btn paper-btn"
+                  onClick={() => toggleDrop("second")}
+                >
+                  <i className="fa fa-book"></i>
                   2nd Paper
                   <span
-                        className={
-                          dropStatus == "second"
-                            ? "fa fa-caret-down second rotate"
-                            : "fa fa-caret-down second"
-                        }
-                      ></span>
-                    </a>
-                    {/* Navbar Menu Dropdown Content */}
-                    <ul
-                      className={
-                        dropStatus == "second" ? "second-show show1" : "second-show"
-                      }
-                    >
-                      {/* Navbar Menu Dropdown Content Item */}
-                      {classDB.g_p_c
-                        .filter(
-                          (x) =>
-                            x[1].group == classDB.SelectedChap.group &&
-                            x[1].part == 2
-                        )
-                        .map((x) => (
-                          <li
-                            className="li_chapter"
-                            onClick={() => sendData(2, x[1].chap)}
-                          >
-                            <HashLink smooth to="#class">
-                              Chapter {x[1].chap}{" "}
-                              <span className={`chap_status_${x[1].status}`}>
-                                ( {x[1].status} )
+                    className={
+                      dropStatus == "second"
+                        ? "fa fa-caret-down second rotate"
+                        : "fa fa-caret-down second"
+                    }
+                  ></span>
+                </a>
+                {/* Navbar Menu Dropdown Content */}
+                <ul
+                  className={
+                    dropStatus == "second" ? "second-show show1" : "second-show"
+                  }
+                >
+                  {/* Navbar Menu Dropdown Content Item */}
+                  {classDB.g_p_c
+                    .filter(
+                      (x) =>
+                        x[1].group == classDB.SelectedChap.group &&
+                        x[1].part == 2
+                    )
+                    .map((x) => (
+                      <li
+                        className="li_chapter"
+                        onClick={() => sendData(2, x[1].chap)}
+                      >
+                        <HashLink smooth to="#class">
+                          Chapter {x[1].chap}{" "}
+                          <span className={`chap_status_${x[1].status}`}>
+                            ( {x[1].status} )
                           </span>
-                            </HashLink>
-                            {/* <a href="#">Chapter 1</a> */}
-                          </li>
-                        ))}
-                    </ul>
-                  </li>
-                </>
-              )}
+                        </HashLink>
+                        {/* <a href="#">Chapter 1</a> */}
+                      </li>
+                    ))}
+                </ul>
+              </li>
+            </>
+          )}
           {/* Condition To Check If Logged In or Not */}
           {classDB.user == true ? (
             <>
@@ -380,7 +388,11 @@ function Header(props) {
               </li>
 
               <li>
-                <Link className="nav-link" onClick={toggleMenu} to="/noticeboard">
+                <Link
+                  className="nav-link"
+                  onClick={toggleMenu}
+                  to="/noticeboard"
+                >
                   <i className="fa fa-tachometer" aria-hidden="true"></i>
                   Notice Board
                 </Link>
@@ -393,9 +405,9 @@ function Header(props) {
               </li>
             </>
           ) : (
-              // Do Nothing if Logged Out
-              <br />
-            )}
+            // Do Nothing if Logged Out
+            <br />
+          )}
         </ul>
       </nav>
     </>

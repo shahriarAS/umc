@@ -27,11 +27,11 @@ function EditComp(props) {
     closeModal,
   } = props;
 
-  console.log(props_pdfList)
+  // console.log(props_pdfList)
 
   const [pdfList, setpdfList] = useState(props_pdfList ? props_pdfList : [])
 
-  console.log(pdfList)
+  // console.log(pdfList)
 
   const handleChange = (e, index) => {
     const list = [...pdfList]

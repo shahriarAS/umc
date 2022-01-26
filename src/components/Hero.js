@@ -10,9 +10,6 @@ function Hero(props) {
 
   var classDB = useSelector((state) => state);
 
-  console.log(
-
-  )
 
   const { group } = props;
   return (

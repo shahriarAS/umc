@@ -15,7 +15,7 @@ function PdfView(props) {
 
     const { pdfList } = props
 
-    console.log(pdfList)
+    // console.log(pdfList)
 
     // Variable Declaration
 

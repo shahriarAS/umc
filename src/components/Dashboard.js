@@ -62,7 +62,7 @@ function Dashboard() {
         pdfList: pdfList
       };
 
-      console.log(pdfList)
+      // console.log(pdfList)
 
       ref.push(data);
 

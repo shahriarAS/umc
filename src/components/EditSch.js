@@ -36,7 +36,7 @@ function EditSch(props) {
             // Run On Form Submit
 
             // Writing Data on Firebase DB
-            console.log("Before Update")
+            // console.log("Before Update")
             const child = firebase.database().ref("ScheduleDB").child(edit_id);
 
             const data = {

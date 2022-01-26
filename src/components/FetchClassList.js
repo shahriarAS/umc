@@ -18,7 +18,7 @@ function FetchClassList() {
     dispatch({
       type: "started",
     });
-    console.log("Started");
+    // console.log("Started");
 
     // Reading Data From DB To Redux
     var ref = firebase.database().ref("ClassListDB");
@@ -29,7 +29,7 @@ function FetchClassList() {
         type: "populate",
         payload: snapshot.val(),
       });
-      console.log("Populated");
+      // console.log("Populated");
     });
   };
 
@@ -49,14 +49,14 @@ function FetchClassList() {
   };
 
   const GrabSchedule = () => {
-    console.log("She")
+    // console.log("She")
     var ref = firebase.database().ref("ScheduleDB");
     ref.on("value", (snapshot) => {
       dispatch({
         type: "PopulateSchedule",
         payload: snapshot.val(),
       })
-      console.log("Scheduling")
+      // console.log("Scheduling")
     })
   }
 

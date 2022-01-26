@@ -12,14 +12,14 @@ function NoticeBoard() {
     const [editorState, setEditorState] = useState(classDB.NoticeDB[GroupData].notice)
 
     const handleGroupData = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setGroupData(e.target.value)
         setEditorState(classDB.NoticeDB[e.target.value].notice)
     }
 
     const handleEditor = (html) => {
         setEditorState(html)
-        console.log(html)
+        // console.log(html)
     }
 
     const SaveNotice = () => {
