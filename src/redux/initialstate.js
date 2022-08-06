@@ -31,8 +31,12 @@ export const initialState = {
       groupURL: "master_hsc_23",
     },
     {
-      groupName: "UMC Admission'21 Math Program for Engineering & Varsity Ka admission",
-      groupURL: "umc_admission_21",
+      groupName: "Uzzal Math club  Engg. + Varsity admission for HSC’22 Batch",
+      groupURL: "umc_engg_versity_22",
+    },
+    {
+      groupName: "UMC Math CQ & MCQ Board Questions Solve for HSC’22 (Free Course)",
+      groupURL: "umc_math_cq_mcq_board_22_free",
     },
   ],
   ScheduleDB: [],

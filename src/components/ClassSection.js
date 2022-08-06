@@ -1,16 +1,15 @@
 // Package Import
-import { useFormik } from "formik";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 // CSS Import
 import "../assets/css/classSection.css";
-
 // Component Import
 import firebase from "../config/FirebaseConfig";
-import EditComp from "./EditComp";
 import UMCReducer from "../redux/umcReducer";
+import EditComp from "./EditComp";
 import PdfView from "./PDFView";
+
+
 
 function ClassSection(props) {
   const { group } = props;
@@ -155,10 +154,13 @@ function ClassSection(props) {
                 <p>Zero to infinity chapter wise course</p>
               ) : classDB.SelectedChap.group == "master_hsc_23" ? (
                 <p>UMC Master group | 1st year | HSC 23</p>
-              ) : classDB.SelectedChap.group == "umc_admission_21" ? (
+              ) : classDB.SelectedChap.group == "umc_engg_versity_22" ? (
                 <p>
-                  UMC Admission'21 Math Program for Engineering & Varsity Ka
-                  admission
+                  Uzzal Math club  Engg. + Varsity admission for HSC’22 Batch
+                </p>
+              ) : classDB.SelectedChap.group == "umc_math_cq_mcq_board_22_free" ? (
+                <p>
+                  UMC Math CQ & MCQ Board Questions Solve for HSC’22 (Free Course)
                 </p>
               ) : (
                 <p>UMC</p>
@@ -266,10 +268,13 @@ function ClassSection(props) {
               <p>Zero to infinity chapter wise course</p>
             ) : classDB.SelectedChap.group == "master_hsc_23" ? (
               <p>UMC Master group | 1st year | HSC 23</p>
-            ) : classDB.SelectedChap.group == "umc_admission_21" ? (
+            ) : classDB.SelectedChap.group == "umc_engg_versity_22" ? (
               <p>
-                UMC Admission'21 Math Program for Engineering & Varsity Ka
-                admission
+                Uzzal Math club  Engg. + Varsity admission for HSC’22 Batch
+              </p>
+            ) : classDB.SelectedChap.group == "umc_math_cq_mcq_board_22_free" ? (
+              <p>
+                UMC Math CQ & MCQ Board Questions Solve for HSC’22 (Free Course)
               </p>
             ) : (
               <p>UMC</p>
