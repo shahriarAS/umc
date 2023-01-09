@@ -20,6 +20,7 @@ function ClassSection(props) {
   const [PDFStatus, setPDFStatus] = useState(false);
   const [PDFValues, setPDFValues] = useState();
   const [editValues, seteditValues] = useState();
+  const [expandClass, setExpandClass] = useState();
 
   // Main Redux State
   var classDB = useSelector((state) => state);
@@ -184,69 +185,72 @@ function ClassSection(props) {
               </div>
               <div className="main-row flex flex-col w-full">
                 {classList.map((i, index) => (
-                  <div className="class-row flex w-full justify-around items-center p-2 border-b-2 border-cyan-500 text-center">
-                    <p className="text-center w-24 block">
-                      Lecture {i[1].classNo}
-                    </p>
-                    <p className="">
-                      {i[1].classLink.length > 0 ? (
-                        <a
-                          href={i[1].classLink}
-                          data-tooltip={i[1].classTitle}
-                          target="_blank"
-                        >
-                          <i className="fa fa-chain"></i>
-                        </a>
-                      ) : (
-                        <p data-tooltip={i[1].classTitle}>
-                          <i className="fa fa-chain"></i>
-                        </p>
-                      )}
-                    </p>
-                    {i[1].pdfList && i[1].pdfList.length > 0 ? (
-                      <p className="">
-                        <i
-                          style={{ cursor: "pointer" }}
-                          className="fa fa-chain"
-                          onClick={() => OpenPDF(i[1].pdfList)}
-                        ></i>
+                  <>
+                    <div className="class-row transition-all cursor-pointer flex w-full justify-around items-center p-2 border-b-2 border-cyan-500 text-center hover:bg-transparent/100" onClick={() => setExpandClass(prevState => prevState == index ? -1 : index)}>
+                      <p className="text-center w-24 block">
+                        Lecture {i[1].classNo}
                       </p>
-                    ) : (
-                      <p className=" ">N/A</p>
-                    )}
-                    <div className="flex items-center gap-2">
-                      {i[1].examLink ? (
-                        <a
-                          target="_blank"
-                          href={i[1].examLink}
-                          data-tooltip={i[1].examTitle}
-                          data-tooltip-location="left"
-                        >
-                          <i className="fa fa-chain"></i>
-                        </a>
+                      <p className="">
+                        {i[1].classLink.length > 0 ? (
+                          <a
+                            href={i[1].classLink}
+                            data-tooltip={i[1].classTitle}
+                            target="_blank"
+                          >
+                            <i className="fa fa-chain"></i>
+                          </a>
+                        ) : (
+                          <p data-tooltip={i[1].classTitle}>
+                            <i className="fa fa-chain"></i>
+                          </p>
+                        )}
+                      </p>
+                      {i[1].pdfList && i[1].pdfList.length > 0 ? (
+                        <p className="">
+                          <i
+                            style={{ cursor: "pointer" }}
+                            className="fa fa-chain"
+                            onClick={() => OpenPDF(i[1].pdfList)}
+                          ></i>
+                        </p>
                       ) : (
-                        "N/A"
+                        <p className=" ">N/A</p>
+                      )}
+                      <div className="flex items-center gap-2">
+                        {i[1].examLink ? (
+                          <a
+                            target="_blank"
+                            href={i[1].examLink}
+                            data-tooltip={i[1].examTitle}
+                            data-tooltip-location="left"
+                          >
+                            <i className="fa fa-chain"></i>
+                          </a>
+                        ) : (
+                          "N/A"
+                        )}
+                      </div>
+                      {classDB.user == true ? (
+                        <div className="flex gap-2 w-2">
+                          <button
+                            className="class-drop-con-btn"
+                            onClick={() => EditClass(i)}
+                          >
+                            <i className="fa fa-edit"></i>
+                          </button>
+                          <button
+                            className="class-drop-con-btn"
+                            onClick={() => DeleteFunc(i)}
+                          >
+                            <i className="fa fa-trash"></i>
+                          </button>
+                        </div>
+                      ) : (
+                        ""
                       )}
                     </div>
-                    {classDB.user == true ? (
-                      <div className="flex gap-2 w-2">
-                        <button
-                          className="class-drop-con-btn"
-                          onClick={() => EditClass(i)}
-                        >
-                          <i className="fa fa-edit"></i>
-                        </button>
-                        <button
-                          className="class-drop-con-btn"
-                          onClick={() => DeleteFunc(i)}
-                        >
-                          <i className="fa fa-trash"></i>
-                        </button>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                    <div className={`w-full transition-all overflow-hidden ${index == expandClass ? "h-full py-4" : "h-0"} border-b border-cyan-500`}>{i[1].classTitle}</div>
+                  </>
                 ))}
               </div>
             </div>
