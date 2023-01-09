@@ -170,82 +170,85 @@ function ClassSection(props) {
                 {classDB.SelectedChap.chap}
               </h1>
             </div>
-            <div className="class_table">
-              <p className="class_table_item class_table_heading">Class NO</p>
-              <p className="class_table_item class_table_heading">Class</p>
-              <p className="class_table_item class_table_heading">PDF</p>
-              <p className="class_table_item class_table_heading">Exam</p>
-              {classList.map((i, index) => (
-                <>
-                  <p className="class_table_item class_item_classNo">
-                    <span>Lecture {i[1].classNo}</span>
-                  </p>
-                  <p className="class_table_item">
-                    {i[1].classLink.length > 0 ? (
-                      <a
-                        href={i[1].classLink}
-                        data-tooltip={i[1].classTitle}
-                        target="_blank"
-                      >
-                        <i className="fa fa-chain"></i>
-                      </a>
-                    ) : (
-                      <p data-tooltip={i[1].classTitle}>
-                        <i className="fa fa-chain"></i>
-                      </p>
-                    )}
-                  </p>
-                  {i[1].pdfList && i[1].pdfList.length > 0 ? (
-                    <p className="class_table_item">
-                      <i
-                        style={{ cursor: "pointer" }}
-                        className="fa fa-chain"
-                        onClick={() => OpenPDF(i[1].pdfList)}
-                      ></i>
+            <div className="border-2 border-cyan-500 w-full md:w-2/3 text-cyan-500" style={{ "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))" }}>
+              <div className="head-row flex w-full justify-around p-2 bg-gray-800 border-b-2 border-cyan-500">
+                <p className="text-center w-24">Class NO</p>
+                <p className="">Class</p>
+                <p className="">PDF</p>
+                <p className="">Exam</p>
+                {classDB.user == true ? (
+                  <p className=""></p>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="main-row flex flex-col w-full">
+                {classList.map((i, index) => (
+                  <div className="class-row flex w-full justify-around items-center p-2 border-b-2 border-cyan-500 text-center">
+                    <p className="text-center w-24 block">
+                      Lecture {i[1].classNo}
                     </p>
-                  ) : (
-                    <p className="class_table_item ">N/A</p>
-                  )}
-                  <p className="class_table_item ">
+                    <p className="">
+                      {i[1].classLink.length > 0 ? (
+                        <a
+                          href={i[1].classLink}
+                          data-tooltip={i[1].classTitle}
+                          target="_blank"
+                        >
+                          <i className="fa fa-chain"></i>
+                        </a>
+                      ) : (
+                        <p data-tooltip={i[1].classTitle}>
+                          <i className="fa fa-chain"></i>
+                        </p>
+                      )}
+                    </p>
+                    {i[1].pdfList && i[1].pdfList.length > 0 ? (
+                      <p className="">
+                        <i
+                          style={{ cursor: "pointer" }}
+                          className="fa fa-chain"
+                          onClick={() => OpenPDF(i[1].pdfList)}
+                        ></i>
+                      </p>
+                    ) : (
+                      <p className=" ">N/A</p>
+                    )}
+                    <div className="flex items-center gap-2">
+                      {i[1].examLink ? (
+                        <a
+                          target="_blank"
+                          href={i[1].examLink}
+                          data-tooltip={i[1].examTitle}
+                          data-tooltip-location="left"
+                        >
+                          <i className="fa fa-chain"></i>
+                        </a>
+                      ) : (
+                        "N/A"
+                      )}
+                    </div>
                     {classDB.user == true ? (
-                      <div className="class-dropdown">
-                        {/* <img className="class-dropbtn" src={dots} alt="3 Dots" /> */}
-                        <i className="fa fa-ellipsis-v class-dropbtn"></i>
-                        <div className="class-dropdown-content">
-                          {/* Edit Class Button */}
-                          <button
-                            className="class-drop-con-btn"
-                            onClick={() => EditClass(i)}
-                          >
-                            <i className="fa fa-edit"></i>
-                          </button>
-                          {/* Delete Class Button */}
-                          <button
-                            className="class-drop-con-btn"
-                            onClick={() => DeleteFunc(i)}
-                          >
-                            <i className="fa fa-trash"></i>
-                          </button>
-                        </div>
+                      <div className="flex gap-2 w-2">
+                        <button
+                          className="class-drop-con-btn"
+                          onClick={() => EditClass(i)}
+                        >
+                          <i className="fa fa-edit"></i>
+                        </button>
+                        <button
+                          className="class-drop-con-btn"
+                          onClick={() => DeleteFunc(i)}
+                        >
+                          <i className="fa fa-trash"></i>
+                        </button>
                       </div>
                     ) : (
                       ""
                     )}
-                    {i[1].examLink ? (
-                      <a
-                        target="_blank"
-                        href={i[1].examLink}
-                        data-tooltip={i[1].examTitle}
-                        data-tooltip-location="left"
-                      >
-                        <i className="fa fa-chain"></i>
-                      </a>
-                    ) : (
-                      "N/A"
-                    )}
-                  </p>
-                </>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         </>

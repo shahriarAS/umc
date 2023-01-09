@@ -1,21 +1,19 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Switch } from "react-router-dom";
 import "./assets/css/root.css";
 import "./assets/css/style.css";
-import { Route, Switch } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
-import Header from "./components/root/Header";
-import Footer from "./components/root/Footer";
-import Login from "./components/Login";
-import Loading from "./components/Loading";
-import SignUp from "./components/SignUp";
-import UMCReducer from "./redux/umcReducer";
-import firebase from "./config/FirebaseConfig";
 import DashManual from "./components/DashManual";
+import HomePage from "./components/HomePage";
+import Loading from "./components/Loading";
+import Login from "./components/Login";
 import NoticeBoard from "./components/NoticeBoard";
-import Schedule from "./components/Schedule";
+import Footer from "./components/root/Footer";
+import Header from "./components/root/Header";
+import firebase from "./config/FirebaseConfig";
+import UMCReducer from "./redux/umcReducer";
+
 // import Error from "./components/Error";
 
 function App() {
